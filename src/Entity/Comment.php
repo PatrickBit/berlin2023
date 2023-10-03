@@ -28,7 +28,7 @@ class Comment
 
     #[ORM\ManyToOne(inversedBy: 'comments')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Entity $conference = null;
+    private ?Conference $conference = null;
 
     public function getId(): ?int
     {
@@ -83,12 +83,12 @@ class Comment
         return $this;
     }
 
-    public function getConference(): ?Entity
+    public function getConference(): ?Conference
     {
         return $this->conference;
     }
 
-    public function setConference(?Entity $conference): static
+    public function setConference(?Conference $conference): static
     {
         $this->conference = $conference;
 
